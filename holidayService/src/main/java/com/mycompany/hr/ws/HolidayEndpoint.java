@@ -1,6 +1,6 @@
 package com.mycompany.hr.ws;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -24,15 +24,12 @@ public class HolidayEndpoint {
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "HolidayRequest")
 	public void handleHolidayRequest(@RequestPayload HolidayRequest holidayRequest) throws Exception {
-		// SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		XMLGregorianCalendar startDate = holidayRequest.getHoliday().getStartDate();
-		// Date endDate = holidayRequest.getHoliday().getStartDate();
-		// String name = nameExpression.valueOf(holidayRequest);
+		
+		Date startDate = holidayRequest.getHoliday().getStartDate().toGregorianCalendar().getTime();
+		Date endDate = holidayRequest.getHoliday().getEndDate().toGregorianCalendar().getTime();
+		String name = holidayRequest.getEmployee().getFirstName() + " " + holidayRequest.getEmployee().getLastName();
 
-		String name = holidayRequest.getEmployee().getFirstName();
-		System.out.println("Name:" + name);
-
-		humanResourceService.bookHoliday(null, null, name);
+		humanResourceService.bookHoliday(startDate, endDate, name);
 	}
 
 }
