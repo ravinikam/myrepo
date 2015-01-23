@@ -22,31 +22,31 @@ import com.myschema.HumanResourceService;
 //import org.junit.Test;
 
 public class HolidayServiceTest {
-	
+
 	private static final String NAMESPACE_URI = "http://mycompany.com/hr/schemas";
-	public static final String WEB_SERVICE_URL="http://localhost:8080/holidayService/holiday.wsdl";
-	
+	public static final String WEB_SERVICE_URL = "http://localhost:8080/holidayService/holiday.wsdl";
+
 	QName serviceName = new QName(NAMESPACE_URI, "HumanResourceService");
 	private HumanResource humanResourcePort;
-	
+
 	@Before
-	public void initPort(){
+	public void initPort() {
 		try {
 			HumanResourceService humanResourceService = new HumanResourceService(new URL(WEB_SERVICE_URL), serviceName);
-			 humanResourcePort = humanResourceService.getHumanResourceSoap11();
+			humanResourcePort = humanResourceService.getHumanResourceSoap11();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Test
 	public void testHolidayService() throws Exception {
-		
+
 		HolidayRequest holidayRequest = new HolidayRequest();
 		EmployeeType emp = new EmployeeType();
-		emp.setFirstName("rb");
-		emp.setLastName("nikam");
+		emp.setFirstName("r");
+		emp.setLastName("n");
 		emp.setNumber(new BigInteger("020"));
 		holidayRequest.setEmployee(emp);
 		HolidayType hDay = new HolidayType();
