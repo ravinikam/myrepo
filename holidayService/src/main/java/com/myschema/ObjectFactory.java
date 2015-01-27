@@ -38,19 +38,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HolidayType }
-     * 
-     */
-    public HolidayType createHolidayType() {
-        return new HolidayType();
-    }
-
-    /**
      * Create an instance of {@link EmployeeType }
      * 
      */
     public EmployeeType createEmployeeType() {
         return new EmployeeType();
+    }
+
+    /**
+     * Create an instance of {@link HolidayType }
+     * 
+     */
+    public HolidayType createHolidayType() {
+        return new HolidayType();
     }
 
 }
