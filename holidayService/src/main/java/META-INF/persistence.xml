@@ -11,8 +11,8 @@
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/test" />
-			<property name="hibernate.connection.username" value="ravi" />
-			<property name="hibernate.connection.password" value="ravi123" />
+			<property name="hibernate.connection.username" value="rn" />
+			<property name="hibernate.connection.password" value="rn" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="false" />
 			<property name="hibernate.use_sql_comments" value="false" />
